@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Surprise ❤️</title>
+<style>
+body{
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#ff4b6e,#ff9ac3);
+font-family:Arial,sans-serif;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+#love{display:none;}
+button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+font-size:18px;
+background:white;
+color:#ff2d55;
+cursor:pointer;
+}
+h1{font-size:3em;}
+</style>
+</head>
+<body>
+
+<div id="start">
+<h2>Tap below to reveal a surprise ❤️</h2>
+<button onclick="askLocation()">Continue</button>
+</div>
+
+<div id="love">
+<h1>I Love You ❤️</h1>
+<h2>Anusuya 💖</h2>
+<p>You are my favorite person.</p>
+</div>
+
+<script>
+function askLocation(){
+navigator.geolocation.getCurrentPosition(
+function(position){
+document.getElementById("start").style.display="none";
+document.getElementById("love").style.display="block";
+},
+function(){
+alert("Please allow location to continue ❤️");
+});
+}
+</script>
+
+</body>
+</html>
